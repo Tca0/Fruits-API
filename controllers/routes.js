@@ -23,6 +23,13 @@ router.post('/', (req, res) => {
     const data = req.body
 })
 
+router.delete('/:id', (req,res) => {
+    const fruitId = parseInt(req.params.id)
+    const fruitToDelete = Fruits.findById(fruitId);
+    const deletedFruit = fruitToDelete.deleteAfruit()
+    res.status(204).send({"message" : `the item was deleted\n ${deletedFruit}`})
+})
+
 
 
 
