@@ -56,12 +56,22 @@ router.delete('/:id', (req,res) => {
     }
 })
 
-// router.patch(':/id', (req, res) => {
-//     const fruitId = parseInt(req.params.id)
-//     const newData = req.body
-//     const fruitToUpdate = Fruits.findById(fruitId)
-//     const updatedFruit = fruitToUpdate.updateFruite(newData)
-// })
+router.put('/:id', (req,res) => {
+    console.log('hitting the update route')
+    const fruitId = parseInt(req.params.id)
+    // const newData = JSON.stringify(req.body)
+    const newData = req.body
+    console.log(fruitId)
+    console.log(newData)
+    console.log(newData.name);
+    const fruitToUpdate = Fruits.findById(fruitId)
+    console.log(`this item to update\n`)
+    console.log(fruitToUpdate);
+    const updatedFruit = fruitToUpdate.updateFruite(newData)
+    console.log(`the item after updating \n`)
+    console.log(updatedFruit);
+    res.status(202).send(updatedFruit)
+})
 
 
 
