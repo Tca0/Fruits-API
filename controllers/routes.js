@@ -20,8 +20,12 @@ router.get("/:id", (req, res) => {
 
 //
 router.post('/', (req, res) => {
-    const data = req.body
+    const data = req.body;
+    const newFruit = Fruits.create(data);
+    res.status(201).send(newFruit);
 })
+
+
 
 
 
