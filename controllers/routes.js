@@ -6,9 +6,7 @@ const router = express.Router()
 
 //Obtain all fruits
 router.get('', (req, res) => {
-    console.log("request all data")
     const fruits = Fruits.all
-    console.log(fruits);
     res.send(fruits)
 })
 
@@ -33,6 +31,13 @@ router.delete('/:id', (req,res) => {
     const deletedFruit = fruitToDelete.deleteAfruit()
     res.status(204).send({"message" : `the item was deleted\n ${deletedFruit}`})
 })
+
+// router.patch(':/id', (req, res) => {
+//     const fruitId = parseInt(req.params.id)
+//     const newData = req.body
+//     const fruitToUpdate = Fruits.findById(fruitId)
+//     const updatedFruit = fruitToUpdate.updateFruite(newData)
+// })
 
 
 

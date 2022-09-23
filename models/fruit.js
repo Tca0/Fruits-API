@@ -33,23 +33,20 @@ class Fruit {
     }
     // delete a specific fruit from list(deleting by ID)
     deleteAfruit() {
-        const fruitToDelete = fruitsData.filter((fruit) => fruit.id == this.id)[0]
-        const deletedFruit = fruitsData.splice(fruitsData.indexOf(fruitToDelete), 1)
-        console.log(deletedFruit)
-        console.log(fruitsData.length)
+        // no need to filter it to get the id because it is instance and we can get the id by this.id
+        // const fruitToDelete = fruitsData.filter((fruit) => fruit.id == this.id)[0]
+        const deletedFruit = fruitsData.splice(fruitsData[this.id], 1)
         return
     }
     // update a specific item from the list
-//     updateFruite(fruitNewData) {
-//         // first find the item from db
-//         const fruitToUpdate = fruitsData.filter((fruit) => fruit.id == id)[0]
-//         if(!fruitToUpdate) {
-//             return {message: "Item not found or deleted"}
-//         }
-//         let fruit = new Fruit({
+    // updateFruite(fruitNewData) {
+    //     // first find the item from db
+    //     // const fruitToUpdate = fruitsData.filter((fruit) => fruit.id == id)[0]
+    //     // if(!fruitToUpdate) {
+    //     //     return {message: "Item not found or deleted"}
+    //     // }
 
-//         })
-//     }
+    // }
 }
 
 module.exports = Fruit
