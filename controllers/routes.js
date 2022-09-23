@@ -20,7 +20,9 @@ router.get("/:id", (req, res) => {
 
 //
 router.post('/', (req, res) => {
-    const data = req.body
+    const data = req.body;
+    const newFruit = Fruits.create(data);
+    res.status(201).send(newFruit);
 })
 
 router.delete('/:id', (req,res) => {
@@ -29,6 +31,8 @@ router.delete('/:id', (req,res) => {
     const deletedFruit = fruitToDelete.deleteAfruit()
     res.status(204).send({"message" : `the item was deleted\n ${deletedFruit}`})
 })
+
+
 
 
 
