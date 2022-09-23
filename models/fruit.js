@@ -36,17 +36,25 @@ class Fruit {
         // no need to filter it to get the id because it is instance and we can get the id by this.id
         // const fruitToDelete = fruitsData.filter((fruit) => fruit.id == this.id)[0]
         const deletedFruit = fruitsData.splice(fruitsData[this.id], 1)
-        return
+        console.log('From the class module',deletedFruit[0])
+        return deletedFruit[0]
     }
     // update a specific item from the list
-    // updateFruite(fruitNewData) {
-    //     // first find the item from db
-    //     // const fruitToUpdate = fruitsData.filter((fruit) => fruit.id == id)[0]
-    //     // if(!fruitToUpdate) {
-    //     //     return {message: "Item not found or deleted"}
-    //     // }
-
-    // }
+    updateFruite(fruitNewData) {
+        // first find the item from db
+        const fruitToUpdate = fruitsData.filter((fruit) => fruit.id == this.id)[0]
+        if(!fruitToUpdate) {
+            return {message: "Item not found or deleted"}
+        }
+        // we have to pass through all fileds and assign them to the new value if updated or to the value that stord already if it not changed
+        fruitToUpdate.id = this.id
+        fruitToUpdate.genus = fruitNewData.genus || this.genus
+        fruitToUpdate.name = fruitNewData.name || this.name 
+        fruitToUpdate.family = fruitNewData.family || this.family
+        fruitToUpdate.order = fruitNewData.order || this.order
+        fruitToUpdate.nutritions = fruitNewData.nutritions ||this.nutritions
+        return fruitToUpdate
+    }
 }
 
 module.exports = Fruit
