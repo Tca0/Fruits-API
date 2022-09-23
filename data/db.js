@@ -1,9 +1,10 @@
 // This file will have the dummy data that we need to start our api with
 
-const fruits = [{
+const fruits = [
+    {
     "genus": "Malus",
     "name": "Apple",
-    "id": 6,
+    "id": 1,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -16,7 +17,7 @@ const fruits = [{
 }, {
     "genus": "Prunus",
     "name": "Apricot",
-    "id": 35,
+    "id": 2,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -29,7 +30,7 @@ const fruits = [{
 }, {
     "genus": "Musa",
     "name": "Banana",
-    "id": 1,
+    "id": 3,
     "family": "Musaceae",
     "order": "Zingiberales",
     "nutritions": {
@@ -42,7 +43,7 @@ const fruits = [{
 }, {
     "genus": "Rubus",
     "name": "Blackberry",
-    "id": 64,
+    "id": 4,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -55,7 +56,7 @@ const fruits = [{
 }, {
     "genus": "Fragaria",
     "name": "Blueberry",
-    "id": 33,
+    "id": 5,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -68,7 +69,7 @@ const fruits = [{
 }, {
     "genus": "Prunus",
     "name": "Cherry",
-    "id": 9,
+    "id": 6,
     "family": "Rosaceae",
     "order": "None",
     "nutritions": {
@@ -81,7 +82,7 @@ const fruits = [{
 }, {
     "genus": "Durio",
     "name": "Durian",
-    "id": 60,
+    "id": 7,
     "family": "Malvaceae",
     "order": "Malvales",
     "nutritions": {
@@ -94,7 +95,7 @@ const fruits = [{
 }, {
     "genus": "Ficus",
     "name": "Fig",
-    "id": 68,
+    "id": 8,
     "family": "Moraceae",
     "order": "Rosales",
     "nutritions": {
@@ -107,7 +108,7 @@ const fruits = [{
 }, {
     "genus": "Ribes",
     "name": "Gooseberry",
-    "id": 69,
+    "id": 9,
     "family": "Grossulariaceae",
     "order": "Saxifragales",
     "nutritions": {
@@ -120,7 +121,7 @@ const fruits = [{
 }, {
     "genus": "Vitis",
     "name": "Grapes",
-    "id": 47,
+    "id": 10,
     "family": "Vitaceae",
     "order": "Vitales",
     "nutritions": {
@@ -133,7 +134,7 @@ const fruits = [{
 }, {
     "genus": "Malus",
     "name": "GreenApple",
-    "id": 72,
+    "id": 11,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -146,7 +147,7 @@ const fruits = [{
 }, {
     "genus": "Psidium",
     "name": "Guava",
-    "id": 37,
+    "id": 12,
     "family": "Myrtaceae",
     "order": "Myrtales",
     "nutritions": {
@@ -159,7 +160,7 @@ const fruits = [{
 }, {
     "genus": "Apteryx",
     "name": "Kiwi",
-    "id": 66,
+    "id": 13,
     "family": "Actinidiaceae",
     "order": "Struthioniformes",
     "nutritions": {
@@ -172,7 +173,7 @@ const fruits = [{
 }, {
     "genus": "Citrus",
     "name": "Lemon",
-    "id": 26,
+    "id": 14,
     "family": "Rutaceae",
     "order": "Sapindales",
     "nutritions": {
@@ -185,7 +186,7 @@ const fruits = [{
 }, {
     "genus": "Citrus",
     "name": "Lime",
-    "id": 44,
+    "id": 15,
     "family": "Rutaceae",
     "order": "Sapindales",
     "nutritions": {
@@ -198,7 +199,7 @@ const fruits = [{
 }, {
     "genus": "Vaccinium",
     "name": "Lingonberry",
-    "id": 65,
+    "id": 16,
     "family": "Ericaceae",
     "order": "Ericales",
     "nutritions": {
@@ -211,7 +212,7 @@ const fruits = [{
 }, {
     "genus": "Litchi",
     "name": "Lychee",
-    "id": 67,
+    "id": 17,
     "family": "Sapindaceae",
     "order": "Sapindales",
     "nutritions": {
@@ -224,7 +225,7 @@ const fruits = [{
 }, {
     "genus": "Mangifera",
     "name": "Mango",
-    "id": 27,
+    "id": 18,
     "family": "Anacardiaceae",
     "order": "Sapindales",
     "nutritions": {
@@ -237,7 +238,7 @@ const fruits = [{
 }, {
     "genus": "Cucumis",
     "name": "Melon",
-    "id": 41,
+    "id": 19,
     "family": "Cucurbitaceae",
     "order": "Cucurbitaceae",
     "nutritions": {
@@ -250,7 +251,7 @@ const fruits = [{
 }, {
     "genus": "Citrus",
     "name": "Orange",
-    "id": 2,
+    "id": 20,
     "family": "Rutaceae",
     "order": "Sapindales",
     "nutritions": {
@@ -263,7 +264,7 @@ const fruits = [{
 }, {
     "genus": "Carica",
     "name": "Papaya",
-    "id": 42,
+    "id": 21,
     "family": "Caricaceae",
     "order": "Caricacea",
     "nutritions": {
@@ -276,7 +277,7 @@ const fruits = [{
 }, {
     "genus": "Passiflora",
     "name": "Passionfruit",
-    "id": 70,
+    "id": 22,
     "family": "Passifloraceae",
     "order": "Malpighiales",
     "nutritions": {
@@ -289,7 +290,7 @@ const fruits = [{
 }, {
     "genus": "Pyrus",
     "name": "Pear",
-    "id": 4,
+    "id": 23,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -302,7 +303,7 @@ const fruits = [{
 }, {
     "genus": "Diospyros",
     "name": "Persimmon",
-    "id": 52,
+    "id": 24,
     "family": "Ebenaceae",
     "order": "Rosales",
     "nutritions": {
@@ -315,7 +316,7 @@ const fruits = [{
 }, {
     "genus": "Ananas",
     "name": "Pineapple",
-    "id": 10,
+    "id": 25,
     "family": "Bromeliaceae",
     "order": "Poales",
     "nutritions": {
@@ -328,7 +329,7 @@ const fruits = [{
 }, {
     "genus": "Prunus",
     "name": "Plum",
-    "id": 71,
+    "id": 26,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -341,7 +342,7 @@ const fruits = [{
 }, {
     "genus": "Rubus",
     "name": "Raspberry",
-    "id": 23,
+    "id": 28,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -354,7 +355,7 @@ const fruits = [{
 }, {
     "genus": "Fragaria",
     "name": "Strawberry",
-    "id": 3,
+    "id": 29,
     "family": "Rosaceae",
     "order": "Rosales",
     "nutritions": {
@@ -367,7 +368,7 @@ const fruits = [{
 }, {
     "genus": "Solanum",
     "name": "Tomato",
-    "id": 5,
+    "id": 30,
     "family": "Solanaceae",
     "order": "Solanales",
     "nutritions": {
@@ -380,7 +381,7 @@ const fruits = [{
 }, {
     "genus": "Spondias",
     "name": "Umbu",
-    "id": 73,
+    "id": 31,
     "family": "Anacardiaceae",
     "order": "0",
     "nutritions": {
@@ -393,7 +394,7 @@ const fruits = [{
 }, {
     "genus": "Citrullus",
     "name": "Watermelon",
-    "id": 25,
+    "id": 32,
     "family": "Cucurbitaceae",
     "order": "Cucurbitales",
     "nutritions": {

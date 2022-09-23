@@ -1,18 +1,5 @@
 const fruitsData = require('../data/db')
 
-// {
-//     "genus": "Malus",
-//     "name": "Apple",
-//     "id": 6,
-//     "family": "Rosaceae",
-//     "order": "Rosales",
-//     "nutritions": {
-//         "carbohydrates": 11.4,
-//         "protein": 0.3,
-//         "fat": 0.4,
-//         "calories": 52,
-//         "sugar": 10.3
-//     }
 class Fruit {
     constructor(data) {
         this.genus = data.genus
@@ -39,7 +26,7 @@ class Fruit {
     // add new fruit to the list
     static createNewFruit(fruit) {
         // we add a new item to the array and its id sohuld match the number that comes directly after the last item id's  
-        const newFruitId = fruitsData[foundedFruit.length -1].id + 1;
+        const newFruitId = fruitsData[fruitsData.length -1].id + 1;
         const newFruit = new Fruit({ id: newFruitId , ...fruit })
         fruitsData.push(newFruit);
         return newFruit
@@ -48,7 +35,9 @@ class Fruit {
     deleteAfruit() {
         const fruitToDelete = fruitsData.filter((fruit) => fruit.id == this.id)[0]
         const deletedFruit = fruitsData.splice(fruitsData.indexOf(fruitToDelete), 1)
-        return deletedFruit
+        console.log(deletedFruit)
+        console.log(fruitsData.length)
+        return
     }
     // update a specific item from the list
 //     updateFruite(fruitNewData) {
@@ -62,3 +51,5 @@ class Fruit {
 //         })
 //     }
 }
+
+module.exports = Fruit

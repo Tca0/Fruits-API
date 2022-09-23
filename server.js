@@ -4,13 +4,13 @@ let cors = require("cors")
 app.use(cors());
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-const appRouts = require('./controllers/routes')
+const router = require('./controllers/routes')
 
 app.get('/', (req, res) => {
-    res.status(200).send('Hello Gustaf!')
+    res.status(200).send('API -Fruits')
 })
 
-app.use('/fruits', appRouts)
+app.use('/fruits', router)
 
 
 module.exports = app

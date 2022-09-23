@@ -5,8 +5,10 @@ const Fruits = require('../models/fruit')
 const router = express.Router()
 
 //Obtain all fruits
-router.get('/', (req, res) => {
+router.get('', (req, res) => {
+    console.log("request all data")
     const fruits = Fruits.all
+    console.log(fruits);
     res.send(fruits)
 })
 
@@ -21,7 +23,7 @@ router.get("/:id", (req, res) => {
 //
 router.post('/', (req, res) => {
     const data = req.body;
-    const newFruit = Fruits.create(data);
+    const newFruit = Fruits.createNewFruit(data);
     res.status(201).send(newFruit);
 })
 
