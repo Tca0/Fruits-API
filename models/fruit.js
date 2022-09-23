@@ -36,7 +36,8 @@ class Fruit {
         // no need to filter it to get the id because it is instance and we can get the id by this.id
         // const fruitToDelete = fruitsData.filter((fruit) => fruit.id == this.id)[0]
         const deletedFruit = fruitsData.splice(fruitsData[this.id], 1)
-        return
+        console.log('From the class module',deletedFruit[0])
+        return deletedFruit[0]
     }
     // update a specific item from the list
     // updateFruite(fruitNewData) {
