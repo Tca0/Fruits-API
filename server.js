@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
     res.status(200).send('Hello Gustaf!')
 })
 
-app.use('/pokemon', appRouts)
+app.use('/fruits', appRouts)
 
 
 module.exports = app
