@@ -3,23 +3,25 @@
 const fruits = [
     {
     "genus": "Malus",
-    "name": "Apple",
+    "name": "Red Apple",
     "id": 1,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": 'https://github.com/Tca0/Fruits-API/blob/main/data/images/apple.jpeg',
     "nutritions": {
         "carbohydrates": 11.4,
         "protein": 0.3,
         "fat": 0.4,
         "calories": 52,
         "sugar": 10.3
-    }
+    },
 }, {
     "genus": "Prunus",
     "name": "Apricot",
     "id": 2,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": 'https://github.com/Tca0/Fruits-API/blob/main/data/images/Apricots.jpeg',
     "nutritions": {
         "carbohydrates": 3.9,
         "protein": 0.5,
@@ -33,6 +35,7 @@ const fruits = [
     "id": 3,
     "family": "Musaceae",
     "order": "Zingiberales",
+    "image": 'https://github.com/Tca0/Fruits-API/blob/main/data/images/Banana.jpeg',
     "nutritions": {
         "carbohydrates": 22,
         "protein": 1,
@@ -46,6 +49,7 @@ const fruits = [
     "id": 4,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": 'https://github.com/Tca0/Fruits-API/blob/main/data/images/Blackberry.jpeg',
     "nutritions": {
         "carbohydrates": 9,
         "protein": 1.3,
@@ -59,6 +63,7 @@ const fruits = [
     "id": 5,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": 'https://github.com/Tca0/Fruits-API/blob/main/data/images/Blueberry.jpeg',
     "nutritions": {
         "carbohydrates": 5.5,
         "protein": 0,
@@ -72,6 +77,7 @@ const fruits = [
     "id": 6,
     "family": "Rosaceae",
     "order": "None",
+    "image": 'https://github.com/Tca0/Fruits-API/blob/main/data/images/Cherry.jpeg.jpeg',
     "nutritions": {
         "carbohydrates": 12,
         "protein": 1,
@@ -85,6 +91,7 @@ const fruits = [
     "id": 7,
     "family": "Malvaceae",
     "order": "Malvales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Durian.jpeg",
     "nutritions": {
         "carbohydrates": 27.1,
         "protein": 1.5,
@@ -98,6 +105,7 @@ const fruits = [
     "id": 8,
     "family": "Moraceae",
     "order": "Rosales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Fig.jpeg",
     "nutritions": {
         "carbohydrates": 19,
         "protein": 0.8,
@@ -111,6 +119,7 @@ const fruits = [
     "id": 9,
     "family": "Grossulariaceae",
     "order": "Saxifragales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Gooseberry.jpeg",
     "nutritions": {
         "carbohydrates": 10,
         "protein": 0.9,
@@ -124,6 +133,7 @@ const fruits = [
     "id": 10,
     "family": "Vitaceae",
     "order": "Vitales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Grapes.jpeg",
     "nutritions": {
         "carbohydrates": 18.1,
         "protein": 0.72,
@@ -137,6 +147,7 @@ const fruits = [
     "id": 11,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/apple.jpeg",
     "nutritions": {
         "carbohydrates": 3.1,
         "protein": 0.4,
@@ -150,6 +161,7 @@ const fruits = [
     "id": 12,
     "family": "Myrtaceae",
     "order": "Myrtales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Guava.webp",
     "nutritions": {
         "carbohydrates": 14,
         "protein": 2.6,
@@ -163,6 +175,7 @@ const fruits = [
     "id": 13,
     "family": "Actinidiaceae",
     "order": "Struthioniformes",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Kiwi.jpeg",
     "nutritions": {
         "carbohydrates": 15,
         "protein": 1.1,
@@ -176,6 +189,7 @@ const fruits = [
     "id": 14,
     "family": "Rutaceae",
     "order": "Sapindales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/lemon.jpeg",
     "nutritions": {
         "carbohydrates": 9,
         "protein": 1.1,
@@ -189,6 +203,7 @@ const fruits = [
     "id": 15,
     "family": "Rutaceae",
     "order": "Sapindales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Lime.png",
     "nutritions": {
         "carbohydrates": 8.4,
         "protein": 0.3,
@@ -202,6 +217,7 @@ const fruits = [
     "id": 16,
     "family": "Ericaceae",
     "order": "Ericales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Lingonberry.jpeg",
     "nutritions": {
         "carbohydrates": 11.3,
         "protein": 0.75,
@@ -215,6 +231,7 @@ const fruits = [
     "id": 17,
     "family": "Sapindaceae",
     "order": "Sapindales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Lychee.jpeg",
     "nutritions": {
         "carbohydrates": 17,
         "protein": 0.8,
@@ -228,6 +245,7 @@ const fruits = [
     "id": 18,
     "family": "Anacardiaceae",
     "order": "Sapindales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Mango.jpeg",
     "nutritions": {
         "carbohydrates": 15,
         "protein": 0.82,
@@ -241,6 +259,7 @@ const fruits = [
     "id": 19,
     "family": "Cucurbitaceae",
     "order": "Cucurbitaceae",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Melon.jpeg",
     "nutritions": {
         "carbohydrates": 8,
         "protein": 0,
@@ -254,6 +273,7 @@ const fruits = [
     "id": 20,
     "family": "Rutaceae",
     "order": "Sapindales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Orange.jpeg",
     "nutritions": {
         "carbohydrates": 8.3,
         "protein": 1,
@@ -267,6 +287,7 @@ const fruits = [
     "id": 21,
     "family": "Caricaceae",
     "order": "Caricacea",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Papaya.jpeg",
     "nutritions": {
         "carbohydrates": 11,
         "protein": 0,
@@ -280,6 +301,7 @@ const fruits = [
     "id": 22,
     "family": "Passifloraceae",
     "order": "Malpighiales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Passionfruit.jpeg",
     "nutritions": {
         "carbohydrates": 22.4,
         "protein": 2.2,
@@ -293,6 +315,7 @@ const fruits = [
     "id": 23,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Pear.jpeg",
     "nutritions": {
         "carbohydrates": 15,
         "protein": 0.4,
@@ -306,6 +329,7 @@ const fruits = [
     "id": 24,
     "family": "Ebenaceae",
     "order": "Rosales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Persimmon.jpeg",
     "nutritions": {
         "carbohydrates": 18,
         "protein": 0,
@@ -319,6 +343,7 @@ const fruits = [
     "id": 25,
     "family": "Bromeliaceae",
     "order": "Poales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Pineapple.jpeg",
     "nutritions": {
         "carbohydrates": 13.12,
         "protein": 0.54,
@@ -332,6 +357,7 @@ const fruits = [
     "id": 26,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Plum.jpeg",
     "nutritions": {
         "carbohydrates": 11.4,
         "protein": 0.7,
@@ -345,6 +371,7 @@ const fruits = [
     "id": 28,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Raspberries.jpeg",
     "nutritions": {
         "carbohydrates": 12,
         "protein": 1.2,
@@ -358,6 +385,7 @@ const fruits = [
     "id": 29,
     "family": "Rosaceae",
     "order": "Rosales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Strawberry.jpeg",
     "nutritions": {
         "carbohydrates": 5.5,
         "protein": 0.8,
@@ -371,6 +399,7 @@ const fruits = [
     "id": 30,
     "family": "Solanaceae",
     "order": "Solanales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Tomato.jpeg",
     "nutritions": {
         "carbohydrates": 3.9,
         "protein": 0.9,
@@ -384,6 +413,7 @@ const fruits = [
     "id": 31,
     "family": "Anacardiaceae",
     "order": "0",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Umbu.png",
     "nutritions": {
         "carbohydrates": 0,
         "protein": 0,
@@ -397,6 +427,7 @@ const fruits = [
     "id": 32,
     "family": "Cucurbitaceae",
     "order": "Cucurbitales",
+    "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Watermelon.jpeg",
     "nutritions": {
         "carbohydrates": 8,
         "protein": 0.6,

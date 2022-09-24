@@ -7,6 +7,7 @@ class Fruit {
         this.id = data.id
         this.family = data.family
         this.order = data.order
+        this.image = data.image
         this.nutritions = data.nutritions
     }
     // return all fruits info
