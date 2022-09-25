@@ -13,6 +13,7 @@ router.get('', (req, res) => {
 })
 
 //Obtain specific fruit via ID
+// it response with status 200 and return the item or response with status code 404 not found
 router.get("/:id", (req, res) => {
     console.log('hitting the getElementById route:')
     const fruitId = parseInt(req.params.id);

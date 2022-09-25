@@ -35,7 +35,29 @@ describe('API server', () => {
         it('responds to get / with status 200', (done) => {
             request(api).get('/').expect(200, done);
         });
-    
+        // it should return all list when request get /fruits
+        it('Return a list of data with status code 200 when request get /fruits', (done) => {
+            request(api).get('/fruits').expect(200, done)
+        })
+        // it should return the fifth item on list with get request on url /fruits/5
+        it('Return the item that its id match the id in the get request /fruits/:id' , (done) => {
+            request(api).get('/fruits/5').expect(200)
+        .expect({
+            "genus": "Fragaria",
+            "name": "Blueberry",
+            "id": 5,
+            "family": "Rosaceae",
+            "order": "Rosales",
+            "image": 'https://github.com/Tca0/Fruits-API/blob/main/data/images/Blueberry.jpeg',
+            "nutritions": {
+                "carbohydrates": 5.5,
+                "protein": 0,
+                "fat": 0.4,
+                "calories": 29,
+                "sugar": 5.4
+            }
+        }, done)
+        })
     it('should return all fruits', () => {
         const result = fruitDB;
         expect(Fruit.all).toEqual(result)
