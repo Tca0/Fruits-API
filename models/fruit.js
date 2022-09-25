@@ -28,7 +28,7 @@ class Fruit {
     static createNewFruit(fruit) {
         // we add a new item to the array and its id sohuld match the number that comes directly after the last item id's  
         const newFruitId = fruitsData[fruitsData.length -1].id + 1;
-        const newFruit = new Fruit({ id: newFruitId , ...fruit })
+        const newFruit = new Fruit({ id: fruitsData[fruitsData.length -1].id + 1 , ...fruit })
         fruitsData.push(newFruit);
         return newFruit
     }
@@ -36,8 +36,10 @@ class Fruit {
     deleteAfruit() {
         // no need to filter it to get the id because it is instance and we can get the id by this.id
         // const fruitToDelete = fruitsData.filter((fruit) => fruit.id == this.id)[0]
+        console.log("db length before deletion", fruitsData.length )
         const deletedFruit = fruitsData.splice(fruitsData[this.id], 1)
         console.log('From the class module',deletedFruit[0])
+        console.log("db length after deletion", fruitsData.length )
         return deletedFruit[0]
     }
     // update a specific item from the list

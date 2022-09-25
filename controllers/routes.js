@@ -8,6 +8,7 @@ const router = express.Router()
 router.get('', (req, res) => {
     console.log('the main route to get all list')
     const fruits = Fruits.all
+    console.log("list length", fruits.length);
     // when success to get all data it response by status code 200 
     res.status(200).send(fruits)
 })
@@ -31,11 +32,14 @@ router.get("/:id", (req, res) => {
 })
 
 // add new item to the data
-router.post('/', (req, res) => {
+router.post('', (req, res) => {
     console.log('Hitting post route')
     const data = req.body;
     const newFruit = Fruits.createNewFruit(data);
+    console.log(newFruit)
     res.status(201).send(newFruit);
+    // console.log("response\n",res);
+    // console.log("res keys\n",Object.keys(res))
 })
 
 router.delete('/:id', (req,res) => {

@@ -368,7 +368,7 @@ const fruits = [
 }, {
     "genus": "Rubus",
     "name": "Raspberry",
-    "id": 28,
+    "id": 27,
     "family": "Rosaceae",
     "order": "Rosales",
     "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Raspberries.jpeg",
@@ -382,7 +382,7 @@ const fruits = [
 }, {
     "genus": "Fragaria",
     "name": "Strawberry",
-    "id": 29,
+    "id": 28,
     "family": "Rosaceae",
     "order": "Rosales",
     "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Strawberry.jpeg",
@@ -396,7 +396,7 @@ const fruits = [
 }, {
     "genus": "Solanum",
     "name": "Tomato",
-    "id": 30,
+    "id": 29,
     "family": "Solanaceae",
     "order": "Solanales",
     "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Tomato.jpeg",
@@ -410,7 +410,7 @@ const fruits = [
 }, {
     "genus": "Spondias",
     "name": "Umbu",
-    "id": 31,
+    "id": 30,
     "family": "Anacardiaceae",
     "order": "0",
     "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Umbu.png",
@@ -424,7 +424,7 @@ const fruits = [
 }, {
     "genus": "Citrullus",
     "name": "Watermelon",
-    "id": 32,
+    "id": 31,
     "family": "Cucurbitaceae",
     "order": "Cucurbitales",
     "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Watermelon.jpeg",

@@ -13,7 +13,6 @@ describe('API server', () => {
     let testFruit = {
             "family": undefined,
             "genus": undefined,
-            "id": 33,
             "name": "funghi",
             "image": undefined,
             "name": undefined,
@@ -58,42 +57,62 @@ describe('API server', () => {
             }
         }, done)
         })
-    it('should return all fruits', () => {
-        const result = fruitDB;
-        expect(Fruit.all).toEqual(result)
-    })
+        // it return status 404 and item not found if the item not in db
+        it('Return status 404 when request an item not in db' , (done) => {
+            request(api).get('/fruits/50').expect(404,done)
+        })
+        // it return status 201 to post request and return the new item that created when send a post request to /fruits
+        
+        it('it return status 201 to post request to /fruits and return the new item', (done) => {
+            // const newItem = { ...testFruit, id: fruitDB[fruitDB.length -1].id + 1}
+            request(api).post('/fruits')
+                        .send(testFruit)
+                        .set('Accept', /application\/json/)
+                        .expect(201).expect({ ...testFruit, id: fruitDB[fruitDB.length -1].id + 1}, done)
+        })
 
-    test('it calls the fruit findById method', () => {
-        const fruit = 8
-        expect(Fruit.findById(fruit)).toEqual({
-            "genus": "Ficus",
-            "name": "Fig",
-            "id": 8,
-            "family": "Moraceae",
-            "order": "Rosales",
-            "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Fig.jpeg",
-            "nutritions": {
-                "carbohydrates": 19,
-                "protein": 0.8,
-                "fat": 0.3,
-                "calories": 74,
-                "sugar": 16
-            }})
-    })
+        // delete route test
+        it('responds to delete /fruits/:id with status 204', async () => {
+            await request(api).delete('/fruits/6').expect(204);
+            const newDbList = await request(api).get('/fruits');
+            expect(newDbList.body.length).toBe(fruitDB.length);
+        })
+    // it('should return all fruits', () => {
+    //     const result = fruitDB;
+    //     expect(Fruit.all).toEqual(result)
+    // })
 
-    it('should create a new fruit', () => {
-        const addFruit = "funghi";
-        expect(Fruit.createNewFruit(addFruit)).toEqual({
-                "family": undefined,
-                "genus": undefined,
-                "id": 33,
-                "name": "funghi",
-                "image": undefined,
-                "name": undefined,
-                "nutritions": undefined,
-                "order": undefined,
-              })
-    })
+    // test('it calls the fruit findById method', () => {
+    //     const fruit = 8
+    //     expect(Fruit.findById(fruit)).toEqual({
+    //         "genus": "Ficus",
+    //         "name": "Fig",
+    //         "id": 8,
+    //         "family": "Moraceae",
+    //         "order": "Rosales",
+    //         "image": "https://github.com/Tca0/Fruits-API/blob/main/data/images/Fig.jpeg",
+    //         "nutritions": {
+    //             "carbohydrates": 19,
+    //             "protein": 0.8,
+    //             "fat": 0.3,
+    //             "calories": 74,
+    //             "sugar": 16
+    //         }})
+    // })
+
+    // it('should create a new fruit', () => {
+    //     const addFruit = "funghi";
+    //     expect(Fruit.createNewFruit(addFruit)).toEqual({
+    //             "family": undefined,
+    //             "genus": undefined,
+    //             "id": 33,
+    //             "name": "funghi",
+    //             "image": undefined,
+    //             "name": undefined,
+    //             "nutritions": undefined,
+    //             "order": undefined,
+    //           })
+    // })
 
     // it('should delete a fruit', () => {
     //     const result = fruitDB
