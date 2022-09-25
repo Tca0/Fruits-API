@@ -1,12 +1,40 @@
-const st = require("supertest");
-const { request } = require("../server");
+const request = require("supertest");
+const server = require("../server");
 const Fruit = require("../models/fruit");
 const fruitDB = require("../data/db");
 const { createNewFruit } = require("../models/fruit");
 
 
-
-describe('db tests', () => {
+// describe the test for API
+describe('API server', () => {
+    // define an api as a variable
+    let api;
+    // define a test data element
+    let testFruit = {
+            "family": undefined,
+            "genus": undefined,
+            "id": 33,
+            "name": "funghi",
+            "image": undefined,
+            "name": undefined,
+            "nutritions": undefined,
+            "order": undefined,
+          };
+        //   before all test if the api runnibg
+        beforeAll( () => {
+            api = server.listen(4000, () => {
+                console.log(`Testing the app that is running on port 4000`)
+            })
+        })
+        // test the server closing after all
+        afterAll((done) => {
+            console.log('Gracefully stopping test server');
+            api.close(done);
+        });
+        // test the server is response to get request with url "/" by status 200
+        it('responds to get / with status 200', (done) => {
+            request(api).get('/').expect(200, done);
+        });
     
     it('should return all fruits', () => {
         const result = fruitDB;

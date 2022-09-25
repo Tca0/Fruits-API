@@ -8,7 +8,8 @@ const router = express.Router()
 router.get('', (req, res) => {
     console.log('the main route to get all list')
     const fruits = Fruits.all
-    res.send(fruits)
+    // when success to get all data it response by status code 200 
+    res.status(200).send(fruits)
 })
 
 //Obtain specific fruit via ID
