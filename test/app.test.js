@@ -78,6 +78,29 @@ describe('API server', () => {
             expect(newDbList.body.length).toBe(fruitDB.length);
         })
 
+        // update an item route test
+        let newItemValues ={
+            "genus": "Fragaria-1",
+            "name": "Blueberry-1",
+            "id": 9,
+            "family": "Rosaceae",
+            "order": "Rosales",
+            "image": '',
+            "nutritions": {
+                "carbohydrates": 5.5,
+                "protein": 0,
+                "fat": 0.4,
+                "calories": 29,
+                "sugar": 5.4
+        }
+    }
+        it('Return 202 and the updated item on route /fruits/:id with method put', async () => {
+            const itemToUpdate = await request(api).get('/fruits/9')
+            await request(api).put('/fruits/9').send(newItemValues).expect(202)
+            const updatedItem = await request(api).get('/fruits/9')
+            expect(updatedItem).not.toBe(itemToUpdate)
+        } )
+
     it('should return all fruits', () => {
         const result = fruitDB;
         expect(Fruit.all).toEqual(result)
