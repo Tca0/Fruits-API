@@ -1,13 +1,110 @@
-const st = require("supertest");
-const { request } = require("../server");
+const request = require("supertest");
+const server = require("../server");
 const Fruit = require("../models/fruit");
 const fruitDB = require("../data/db");
 const { createNewFruit } = require("../models/fruit");
 
 
+// describe the test for API
+describe('API server', () => {
+    // define an api as a variable
+    let api;
+    // define a test data element
+        //   before all test if the api runnibg
+        beforeAll( () => {
+            api = server.listen(4000, () => {
+                console.log(`Testing the app that is running on port 4000`)
+            })
+        })
+        // test the server closing after all
+        afterAll((done) => {
+            console.log('Gracefully stopping test server');
+            api.close(done);
+        });
+        // test the server is response to get request with url "/" by status 200
+        it('responds to get / with status 200', (done) => {
+            request(api).get('/').expect(200, done);
+        });
+        // it should return all list when request get /fruits
+        it('Return a list of data with status code 200 when request get /fruits', (done) => {
+            request(api).get('/fruits').expect(200, done)
+        })
+        // it should return the fifth item on list with get request on url /fruits/5
+        it('Return the item that its id match the id in the get request /fruits/:id' , (done) => {
+            request(api).get('/fruits/5').expect(200)
+        .expect({
+            "genus": "Fragaria",
+            "name": "Blueberry",
+            "id": 5,
+            "family": "Rosaceae",
+            "order": "Rosales",
+            "image": 'https://github.com/Tca0/Fruits-API/blob/main/data/images/Blueberry.jpeg',
+            "nutritions": {
+                "carbohydrates": 5.5,
+                "protein": 0,
+                "fat": 0.4,
+                "calories": 29,
+                "sugar": 5.4
+            }
+        }, done)
+        })
+        // it return status 404 and item not found if the item not in db
+        it('Return status 404 when request an item not in db' , (done) => {
+            request(api).get('/fruits/50').expect(404,done)
+        })
+        // it return status 201 to post request and return the new item that created when send a post request to /fruits
+        let testFruit = {
+            "genus": "Test",
+            "name": "Not apple",
+            "family": "Rosaceae",
+            "order": "Rosales",
+            "nutritions": {
+                "carbohydrates": 11.4,
+                "protein": 0.3,
+                "fat": 10,
+                "calories": 52,
+                "sugar": 10.3
+            }
+        };
+        it('it return status 201 to post request to /fruits and return the new item', (done) => {
+            // const newItem = { ...testFruit, id: fruitDB[fruitDB.length -1].id + 1}
+            request(api).post('/fruits')
+                        .send(testFruit)
+                        .set('Accept', /application\/json/)
+                        .expect(201).expect({ ...testFruit, id: fruitDB[fruitDB.length -1].id + 1}, done)
+        })
 
-describe('db tests', () => {
-    
+        // delete route test
+        it('responds to delete /fruits/:id with status 204', async () => {
+            await request(api).delete('/fruits/6').expect(204);
+            const newDbList = await request(api).get('/fruits');
+            expect(newDbList.body.length).toBe(fruitDB.length);
+        })
+
+        // update an item route test
+        let newItemValues ={
+            "genus": "Fragaria-1",
+            "name": "Blueberry-1",
+            "id": 9,
+            "family": "Rosaceae",
+            "order": "Rosales",
+            "image": '',
+            "nutritions": {
+                "carbohydrates": 5.5,
+                "protein": 0,
+                "fat": 0.4,
+                "calories": 29,
+                "sugar": 5.4
+        }
+    }
+        it('Return 202 and the updated item on route /fruits/:id with method put', (done) => {
+            // const itemToUpdate = request(api).get('/fruits/9')
+            request(api).put('/fruits/9').send(newItemValues).expect(202).expect(newItemValues, done)
+            // const updatedItem = await request(api).get('/fruits/9')
+            // expect(updatedItem).not.toBe(itemToUpdate)
+            
+        } )
+
     it('should return all fruits', () => {
         const result = fruitDB;
         expect(Fruit.all).toEqual(result)
@@ -36,7 +133,7 @@ describe('db tests', () => {
         expect(Fruit.createNewFruit(addFruit)).toEqual({
                 "family": undefined,
                 "genus": undefined,
-                "id": 33,
+                "id": 32,
                 "name": "funghi",
                 "image": undefined,
                 "name": undefined,
