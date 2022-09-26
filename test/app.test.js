@@ -10,15 +10,6 @@ describe('API server', () => {
     // define an api as a variable
     let api;
     // define a test data element
-    let testFruit = {
-            "family": undefined,
-            "genus": undefined,
-            "name": "funghi",
-            "image": undefined,
-            "name": undefined,
-            "nutritions": undefined,
-            "order": undefined,
-          };
         //   before all test if the api runnibg
         beforeAll( () => {
             api = server.listen(4000, () => {
@@ -62,14 +53,26 @@ describe('API server', () => {
             request(api).get('/fruits/50').expect(404,done)
         })
         // it return status 201 to post request and return the new item that created when send a post request to /fruits
-        
-        // it('it return status 201 to post request to /fruits and return the new item', (done) => {
-        //     // const newItem = { ...testFruit, id: fruitDB[fruitDB.length -1].id + 1}
-        //     request(api).post('/fruits')
-        //                 .send(testFruit)
-        //                 .set('Accept', /application\/json/)
-        //                 .expect(201).expect({ ...testFruit, id: fruitDB[fruitDB.length -1].id + 1}, done)
-        // })
+        let testFruit = {
+            "genus": "Test",
+            "name": "Not apple",
+            "family": "Rosaceae",
+            "order": "Rosales",
+            "nutritions": {
+                "carbohydrates": 11.4,
+                "protein": 0.3,
+                "fat": 10,
+                "calories": 52,
+                "sugar": 10.3
+            }
+        };
+        it('it return status 201 to post request to /fruits and return the new item', (done) => {
+            // const newItem = { ...testFruit, id: fruitDB[fruitDB.length -1].id + 1}
+            request(api).post('/fruits')
+                        .send(testFruit)
+                        .set('Accept', /application\/json/)
+                        .expect(201).expect({ ...testFruit, id: fruitDB[fruitDB.length -1].id + 1}, done)
+        })
 
         // delete route test
         it('responds to delete /fruits/:id with status 204', async () => {
@@ -94,11 +97,12 @@ describe('API server', () => {
                 "sugar": 5.4
         }
     }
-        it('Return 202 and the updated item on route /fruits/:id with method put', async () => {
-            const itemToUpdate = await request(api).get('/fruits/9')
-            await request(api).put('/fruits/9').send(newItemValues).expect(202)
-            const updatedItem = await request(api).get('/fruits/9')
-            expect(updatedItem).not.toBe(itemToUpdate)
+        it('Return 202 and the updated item on route /fruits/:id with method put', (done) => {
+            // const itemToUpdate = request(api).get('/fruits/9')
+            request(api).put('/fruits/9').send(newItemValues).expect(202).expect(newItemValues, done)
+            // const updatedItem = await request(api).get('/fruits/9')
+            // expect(updatedItem).not.toBe(itemToUpdate)
+            
         } )
 
     it('should return all fruits', () => {

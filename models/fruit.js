@@ -27,17 +27,24 @@ class Fruit {
     // add new fruit to the list
     static createNewFruit(fruit) {
         // we add a new item to the array and its id sohuld match the number that comes directly after the last item id's  
+        console.log("****Add function****\n: last item before adding: \n", fruitsData[fruitsData.length-1]);
         const newFruitId = fruitsData[fruitsData.length -1].id + 1;
         const newFruit = new Fruit({ id: fruitsData[fruitsData.length -1].id + 1 , ...fruit })
         fruitsData.push(newFruit);
+        console.log(" last item now is: \n",fruitsData[fruitsData.length -1] )
         return newFruit
     }
     // delete a specific fruit from list(deleting by ID)
     deleteAfruit() {
         // no need to filter it to get the id because it is instance and we can get the id by this.id
         // const fruitToDelete = fruitsData.filter((fruit) => fruit.id == this.id)[0]
+        console.log("******Delete function*******");
         console.log("db length before deletion", fruitsData.length )
-        const deletedFruit = fruitsData.splice(fruitsData[this.id], 1)
+        console.log("id for delete item",this.id)
+        console.log(fruitsData[this.id])
+        const itemToDelete = fruitsData.filter((item) => item.id == this.id)
+        const deletedFruit = fruitsData.splice(fruitsData.indexOf(itemToDelete), 1)
+        console.log("This item was spliced from list",deletedFruit)
         console.log('From the class module',deletedFruit[0])
         console.log("db length after deletion", fruitsData.length )
         return deletedFruit[0]
@@ -56,6 +63,12 @@ class Fruit {
         fruitToUpdate.family = fruitNewData.family || this.family
         fruitToUpdate.order = fruitNewData.order || this.order
         fruitToUpdate.nutritions = fruitNewData.nutritions ||this.nutritions
+        if(fruitNewData.image == "" || fruitNewData.image == " ") {
+            fruitToUpdate.image = ""
+        } else {
+            fruitToUpdate.image = fruitNewData.image ||this.image
+        }
+        // (fruitNewData.image == " ") && (fruitToUpdate.image = fruitNewData.image)
         return fruitToUpdate
     }
 }
